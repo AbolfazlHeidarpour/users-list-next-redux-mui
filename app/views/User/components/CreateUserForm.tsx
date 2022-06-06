@@ -19,7 +19,8 @@ const CreateUserForm: React.FC<CreateUserFormProps> = (
       last_name,
       mobile
     },
-    submitAllowed
+    submitAllowed,
+    cancelAllowed
   }
 ) =>
   <Box
@@ -53,6 +54,7 @@ const CreateUserForm: React.FC<CreateUserFormProps> = (
           color='error'
           variant='contained'
           onClick={onClear}
+          disabled={!cancelAllowed()}
         >
           صرفنظر
         </Button>
