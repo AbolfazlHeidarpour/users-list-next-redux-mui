@@ -12,7 +12,7 @@ const useCreateUser = (): UseCreateUserReturnType => {
   const dispatch: Dispatch<CreateUserActions> = useDispatch<Dispatch<CreateUserActions>>();
   const newUser = useSelector((state: UserManagerState) => state.createUser.newUser);
   const response = useSelector((state: UserManagerState) => state.createUser.response);
-  const [isOpen, open, close] = useBoolean();
+  const [isOpen, open, close] = useBoolean(false);
 
   const handleFirstNameChange: React.ChangeEventHandler<HTMLInputElement> = React.useCallback(
     (event) =>
@@ -62,9 +62,9 @@ const useCreateUser = (): UseCreateUserReturnType => {
             type: CreateUserActionsTypes.RESPONSE,
             payload: result
           })
-        );
+        ).finally(() => open());
     },
-    [newUser, dispatch]
+    [newUser, dispatch, open]
   );
 
   const handleSubmitIsAllowed = React.useCallback(
@@ -82,14 +82,6 @@ const useCreateUser = (): UseCreateUserReturnType => {
     ,
     [newUser]
   );
-
-  React.useEffect(() => {
-    if (response.data && response.data.id >= 0) open();
-  }, [
-    response.data,
-    open,
-    close
-  ]);
 
   return [
     newUser,
