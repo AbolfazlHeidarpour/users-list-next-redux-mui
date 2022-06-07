@@ -9,11 +9,11 @@ const Content: React.FC<ContentProps> = ({children}) =>
     sx={{
       flexGrow: 1,
       backgroundColor: '#ececec',
-      p: 3
+      p: 3,
+      width: `calc(100% - ${240}px)`,
     }}
     id='main'
   >
-    <Toolbar />
     {children}
   </Box>
 ;

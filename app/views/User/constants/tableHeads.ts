@@ -10,6 +10,10 @@ const tableHeads = [
   {
     id: 2,
     name: 'شماره موبایل'
+  },
+  {
+    id: 3,
+    name: 'عملیات'
   }
 ];
 

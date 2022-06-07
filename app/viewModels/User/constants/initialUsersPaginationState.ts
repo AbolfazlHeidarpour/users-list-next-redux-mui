@@ -1,11 +1,9 @@
-import UserPaginationState from "../../../models/UserPaginationState";
+import UserPaginationState from "../../../models/Users/UserPaginationState";
 
 const initialUsersPaginationState: UserPaginationState = {
-  page: -1,
-  per_page: -1,
-  total: -1,
-  users: [],
-  isLoading: false
+  page: 0,
+  per_page: 10,
+  users: []
 };
 
 export default initialUsersPaginationState;

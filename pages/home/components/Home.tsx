@@ -6,12 +6,13 @@ import useSelectItem from "../hooks/useSelectItem";
 import Content from "./Content";
 import contentList from "./ContentList";
 import {createTheme, CssBaseline, ThemeProvider} from "@mui/material";
+import React from "react";
 
 const rtlTheme = createTheme({ direction: "rtl" });
 
-
 const Home: NextPage = () => {
   const [selectedButton, onSelect] = useSelectItem();
+
 
   return (
     <ThemeProvider theme={rtlTheme}>

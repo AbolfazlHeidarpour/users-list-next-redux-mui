@@ -1,16 +1,12 @@
 import {Action} from "redux";
 import UsersPaginationActionTypes from "../enum/UsersPaginationActionTypes";
 import StandardAction from "./StandardAction";
-import User from "../../../models/User";
+import User from "../../../models/Users/User";
 
-type UserPaginationActions = Action<UsersPaginationActionTypes.LOADED>
-  | Action<UsersPaginationActionTypes.LOADING>
-  | Action<UsersPaginationActionTypes.CLEAR_USERS>
+type UserPaginationActions = Action<UsersPaginationActionTypes.NO_PAGE>
+  | Action<UsersPaginationActionTypes.N0_USERS>
   | StandardAction<UsersPaginationActionTypes.ADD_USERS, User[]>
-  | Action<UsersPaginationActionTypes.INCREMENT_PAGE>
-  | Action<UsersPaginationActionTypes.DECREMENT_PAGE>
-  | Action<UsersPaginationActionTypes.NO_PAGE>
   | StandardAction<UsersPaginationActionTypes.PER_PAGE, number>
-  | StandardAction<UsersPaginationActionTypes.TOTAL, number>;
+  | StandardAction<UsersPaginationActionTypes.CHANGE_PAGE, number>;
 
 export default UserPaginationActions;

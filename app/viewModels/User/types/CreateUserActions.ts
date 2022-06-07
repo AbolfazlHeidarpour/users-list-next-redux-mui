@@ -1,7 +1,7 @@
 import CreateUserActionsTypes from "../enum/CreateUserActionsTypes";
 import StandardAction from "./StandardAction";
 import {Action} from "redux";
-import CreateUserResponseData from "../../../models/CreateUserResponseData";
+import CreateUserResponseData from "../../../models/Users/CreateUserResponseData";
 
 type CreateUserActions = StandardAction<CreateUserActionsTypes.FIRST_NAME, string>
   | StandardAction<CreateUserActionsTypes.LAST_NAME, string>

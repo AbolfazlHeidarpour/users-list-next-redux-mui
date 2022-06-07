@@ -1,4 +1,4 @@
-import CreateUserState from "../../../models/CreateUserState";
+import CreateUserState from "../../../models/Users/CreateUserState";
 import initialNewUser from "./initialNewUser";
 import initialUser from "./initialUser";
 
