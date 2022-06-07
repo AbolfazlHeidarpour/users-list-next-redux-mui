@@ -10,9 +10,8 @@ const UsersListTableBody: React.FC<UsersListTableBodyProps> = React.memo(
   (
     {
       users,
-      per_page,
-      page,
-      data
+      handleSearch,
+      page
     }
   ) => {
     const {
@@ -29,7 +28,7 @@ const UsersListTableBody: React.FC<UsersListTableBodyProps> = React.memo(
 
     return (
       <TableBody>
-        {users.slice(page * per_page, page * per_page + per_page).map(user =>
+        {handleSearch(users)[page]?.map(user =>
           <UserRowView
             isFavorite={isFavorite}
             addFavorite={handleAddUserToFavorites}

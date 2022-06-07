@@ -10,7 +10,14 @@ const UsersListTableHead = React.memo(
       <TableRow>
         {
           tableHeads.map(head =>
-            <TableCell key={head.id} align='center'>
+            <TableCell
+              key={head.id}
+              align='center'
+              sx={{
+                fontFamily: 'titr',
+                fontSize: 20
+              }}
+            >
               {head.name}
             </TableCell>
           )

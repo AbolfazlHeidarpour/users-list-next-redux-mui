@@ -22,3 +22,18 @@ a {
 html, body {
   height: calc(100% - 24px);
 }
+
+@font-face {
+  font-family: nazanin;
+  src: url("../fonts/B-NAZANIN.ttf")format("truetype");
+}
+
+@font-face {
+  font-family: lotus;
+  src: url("../fonts/B Lotus_0.ttf")format("truetype");
+}
+
+@font-face {
+  font-family: titr;
+  src: url("../fonts/B Titr Bold_0.ttf");
+}

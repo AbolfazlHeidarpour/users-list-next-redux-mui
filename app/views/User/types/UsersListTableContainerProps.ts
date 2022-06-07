@@ -1,10 +1,8 @@
 import User from "../../../models/Users/User";
-import ListResponse from "../../../models/API/ListResponse";
 
 export type UsersListTableContainerProps = {
-  readonly users: User[];
+  readonly handleSearch: (data: Record<number, User[]>) => Record<number, User[]>;
+  readonly users: Record<number, User[]>;
   readonly isFetching: boolean;
   readonly page: number;
-  readonly per_page: number;
-  readonly data: ListResponse<User> | undefined;
 }

@@ -14,23 +14,20 @@ const useUserPagination = (): UseUserPaginationReturnType => {
 
   React.useEffect(() => {
     if (data) {
-      if (users.length === 0) {
+      if (Object.keys(users).length === 0) {
         dispatch({
           type: UsersPaginationActionTypes.ADD_USERS,
-          payload: data.users
+          payload: {[data.page]: data.users}
         });
       }
       else {
-        const filteredUsers = data.users.filter(user => !users.includes(user));
         dispatch({
           type: UsersPaginationActionTypes.ADD_USERS,
-          payload: [...users, ...filteredUsers]
+          payload: {...users, [data.page]: data.users}
         });
       }
     }
   }, [data, dispatch]);
-
-  React.useEffect(() => console.log(users), [users]);
 
   const handleResetPage = React.useCallback(
     () =>

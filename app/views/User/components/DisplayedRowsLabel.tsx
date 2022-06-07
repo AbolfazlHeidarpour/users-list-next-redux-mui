@@ -8,7 +8,7 @@ export default function DisplayedRowsLabel(paginationInfo: LabelDisplayedRowsArg
   const total = React.useMemo(() => paginationInfo.count.toLocaleString('fa'), [paginationInfo.count]);
 
   return (
-    <Typography>
+    <Typography sx={{fontFamily: 'nazanin'}}>
       {from}-{to} از {total}
     </Typography>
   );

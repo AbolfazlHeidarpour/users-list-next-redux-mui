@@ -47,15 +47,23 @@ const UserRowView: React.FC<UserRowViewProps> = React.memo(
             {
               !isFavorite(id)
                 ?
-                <Tooltip title='مورد علاقه' placement='left' arrow>
+                <Tooltip
+                  title='مورد علاقه'
+                  placement='left'
+                  arrow
+                >
                   <IconButton onClick={() => addFavorite(id, `${firstName} ${lastName}`)}>
-                    <FavoriteBorderIcon color='primary' />
+                    <FavoriteBorderIcon color='error' />
                   </IconButton>
                 </Tooltip>
                 :
-                <Tooltip title='حذف علاقه' placement='left' arrow>
+                <Tooltip
+                  title='حذف علاقه'
+                  placement='left'
+                  arrow
+                >
                   <IconButton onClick={() => removeFavorite(id)}>
-                    <FavoriteIcon color='primary' />
+                    <FavoriteIcon color='error' />
                   </IconButton>
                 </Tooltip>
             }

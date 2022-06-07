@@ -12,6 +12,11 @@ import Typography from "@mui/material/Typography";
 
 const UsersListView: React.FC<UsersListViewProps> = (
   {
+    search: {
+      keyword,
+      handleKeywordChange,
+      handleSearch,
+    },
     usersPagination: {
       handlePageChange,
       handlePerPageChange,
@@ -51,7 +56,8 @@ const UsersListView: React.FC<UsersListViewProps> = (
                 sx={{
                   mb: 2,
                   width: '300px',
-                  p: 0
+                  p: 0,
+                  fontFamily: 'titr'
                 }}
                 textAlign='left'
               >
@@ -59,14 +65,25 @@ const UsersListView: React.FC<UsersListViewProps> = (
               </Typography>
               <TextField
                 variant="outlined"
-                placeholder="جستجوی کاربر"
+                placeholder="جستجوی کاربر..."
                 size="small"
+                value={keyword}
+                InputLabelProps={{
+                  sx: {
+                    fontFamily: 'nazanin'
+                  }
+                }}
+                InputProps={{
+                  sx: {
+                    fontFamily: 'nazanin'
+                  }
+                }}
+                onChange={handleKeywordChange}
               />
             </Box>
             <UsersListTableContainer
-              data={data}
+              handleSearch={handleSearch}
               page={page}
-              per_page={per_page}
               isFetching={isFetching}
               users={users}
             />
@@ -89,8 +106,9 @@ const UsersListView: React.FC<UsersListViewProps> = (
               component="div"
               showFirstButton
               showLastButton
-              labelRowsPerPage='تعداد سطرها:'
-              sx={{direction: 'ltr'}}
+              labelRowsPerPage={<Typography fontFamily='nazanin'>تعداد سطرها:</Typography>}
+              sx={{ direction: 'ltr' }}
+              SelectProps={{ sx: { fontFamily: 'nazanin' } }}
               ActionsComponent={TablePaginationActions}
               labelDisplayedRows={DisplayedRowsLabel}
             />

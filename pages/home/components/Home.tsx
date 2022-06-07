@@ -17,9 +17,17 @@ const Home: NextPage = () => {
   return (
     <ThemeProvider theme={rtlTheme}>
       <CssBaseline />
-      <Box sx={{mt: '48px'}} id='container'>
+      <Box
+        sx={{
+          mt: '48px',
+          height: selectedButton === 0 ? 'fit-content' : '100%'
+        }}
+      >
         <NavBar />
-        <SideBar onSelect={onSelect}/>
+        <SideBar
+          onSelect={onSelect}
+          selectedButton={selectedButton}
+        />
         <Content>
           {contentList[selectedButton]}
         </Content>

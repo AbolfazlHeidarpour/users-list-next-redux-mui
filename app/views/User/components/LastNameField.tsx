@@ -9,7 +9,17 @@ const LastNameField: React.FC<LastNameFieldProps> = (
   }
 ) =>
   <TextField
-    sx={{mb: 2}}
+    sx={{ mb: 2 }}
+    InputLabelProps={{
+      sx: {
+        fontFamily: 'nazanin'
+      }
+    }}
+    InputProps={{
+      sx: {
+        fontFamily: 'nazanin'
+      }
+    }}
     value={lastName}
     onChange={onChange}
     label='نام خانوادگی'

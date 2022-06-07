@@ -10,10 +10,9 @@ import Divider from "@mui/material/Divider";
 const UsersListTableContainer: React.FC<UsersListTableContainerProps> = React.memo(
   (
     {
+      handleSearch,
       users,
       isFetching,
-      per_page,
-      data,
       page
     }
   ) =>
@@ -30,10 +29,9 @@ const UsersListTableContainer: React.FC<UsersListTableContainerProps> = React.me
           >
             <UsersListTableHead />
             <UsersListTableBody
-              data={data}
-              users={users}
-              per_page={per_page}
+              handleSearch={handleSearch}
               page={page}
+              users={users}
             />
           </Table>
       }

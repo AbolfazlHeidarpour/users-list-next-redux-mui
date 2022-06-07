@@ -30,13 +30,15 @@ const usersPaginationReducer: Reducer<UserPaginationState, UserPaginationActions
     case UsersPaginationActionTypes.N0_USERS:
       return {
         ...state,
-        users: []
+        users: {}
       };
 
     case UsersPaginationActionTypes.ADD_USERS:
       return {
         ...state,
-        users: [...action['payload']]
+        users: {
+          ...action['payload']
+        }
       };
 
     default: return {...state};

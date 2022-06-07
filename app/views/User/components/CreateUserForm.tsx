@@ -5,7 +5,7 @@ import FirstNameField from "./FirstNameField";
 import LastNameField from "./LastNameField";
 import MobileField from "./MobileField";
 import {CreateUserFormProps} from "../types/CreateUserFormProps";
-import {Button} from "@mui/material";
+import CreateUserFormActions from "./CreateUserFormActions";
 
 const CreateUserForm: React.FC<CreateUserFormProps> = (
   {
@@ -42,34 +42,12 @@ const CreateUserForm: React.FC<CreateUserFormProps> = (
         mobile={mobile}
         onChange={onMobileChange}
       />
-      <Box
-        mt={2}
-        display='flex'
-        justifyContent='space-between'
-      >
-        <Button
-          sx={{
-            width: '90px'
-          }}
-          color='error'
-          variant='contained'
-          onClick={onClear}
-          disabled={!cancelAllowed()}
-        >
-          صرفنظر
-        </Button>
-        <Button
-          sx={{
-            width: '90px',
-          }}
-          color='primary'
-          variant='contained'
-          onClick={onSubmit}
-          disabled={!submitAllowed()}
-        >
-          ثبت
-        </Button>
-      </Box>
+      <CreateUserFormActions
+        onClear={onClear}
+        onSubmit={onSubmit}
+        submitAllowed={submitAllowed}
+        cancelAllowed={cancelAllowed}
+      />
     </FormGroup>
   </Box>
 ;

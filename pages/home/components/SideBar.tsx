@@ -10,14 +10,15 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from '@mui/material/ListItemText';
 import GroupIcon from '@mui/icons-material/Group';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
+import Typography from "@mui/material/Typography";
 
-const SideBar: React.FC<SideBarProps> = ({onSelect}) =>
+const SideBar: React.FC<SideBarProps> = ({ onSelect, selectedButton }) =>
   <Drawer
     sx={{
       width: 240,
       flexShrink: 0,
       '& .MuiDrawer-paper': {
-        backgroundColor: '#aeaeae',
+        backgroundColor: '#d7e9f4',
         width: 240,
         boxSizing: 'border-box',
       },
@@ -25,22 +26,61 @@ const SideBar: React.FC<SideBarProps> = ({onSelect}) =>
     variant="permanent"
     anchor="left"
   >
-    <Toolbar>لوگو</Toolbar>
+    <Toolbar>
+      <Typography
+        sx={{
+          width: '100%',
+          fontFamily: 'titr'
+        }}
+        textAlign='center'
+        variant='h6'
+      >
+        داشبورد مدیریت کاربران
+      </Typography>
+    </Toolbar>
     <Divider />
     <List>
       <ListItem disablePadding>
-        <ListItemButton onClick={() => onSelect(0)}>
-          <ListItemText primary='لیست کاربران' sx={{textAlign: 'center'}}/>
+        <ListItemButton
+          onClick={() => onSelect(0)}
+          sx={{
+            backgroundColor: selectedButton === 0
+              ? '#fafafa'
+              : undefined
+          }}
+        >
+          <ListItemText
+            primary={
+              <Typography fontFamily='lotus'>
+                لیست کاربران
+              </Typography>
+            }
+            sx={{ textAlign: 'center' }}
+          />
           <ListItemIcon>
-            <GroupIcon />
+            <GroupIcon color='primary'/>
           </ListItemIcon>
         </ListItemButton>
       </ListItem>
       <ListItem disablePadding>
-        <ListItemButton onClick={() => onSelect(1)}>
-          <ListItemText primary='افزودن کاربر' sx={{textAlign: 'center'}} />
+        <ListItemButton
+          onClick={() => onSelect(1)}
+          sx={{
+            backgroundColor: selectedButton === 1
+              ? '#fafafa'
+              : undefined
+          }}
+        >
+          <ListItemText
+            primary={
+              <Typography fontFamily='lotus'>
+                ثبت کاربران جدید
+              </Typography>
+            }
+            sx={{ textAlign: 'center' }}
+          />
           <ListItemIcon>
-            <GroupAddIcon/>
+            <GroupAddIcon color='primary'/>
           </ListItemIcon>
         </ListItemButton>
       </ListItem>

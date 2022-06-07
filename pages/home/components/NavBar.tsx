@@ -13,11 +13,14 @@ const NavBar: React.FC = () => {
       sx={{
         width: `calc(100% - ${240}px)`,
         ml: `${240}px`,
-        backgroundColor: '#6f6c6c'
+        backgroundColor: '#09a0ec'
       }}
     >
       <Toolbar variant="dense">
         <Typography
+          sx={{
+            fontFamily: 'lotus'
+          }}
           variant="h6"
           noWrap
           component="div"

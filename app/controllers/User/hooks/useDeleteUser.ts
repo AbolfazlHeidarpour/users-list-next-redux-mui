@@ -20,7 +20,6 @@ const useDeleteUser = (deleteCallback: (id: number) => void): UseDeleteUserRetur
 
   const handleDeleteUser = React.useCallback(
     async (id: number) => {
-      dispatchDialog({type: DeleteResponseDialogActionTypes.OPEN_DIALOG});
       await onDelete(id.toString())
         .then(result => {
           if ('data' in result) {
@@ -31,8 +30,14 @@ const useDeleteUser = (deleteCallback: (id: number) => void): UseDeleteUserRetur
           }
         });
       deleteCallback(id);
+      dispatchDialog({type: DeleteResponseDialogActionTypes.OPEN_DIALOG});
     },
-    [onDelete, dispatch, dispatchDialog]
+    [
+      onDelete,
+      dispatch,
+      dispatchDialog,
+      deleteCallback
+    ]
   );
 
   const handleCloseDeleteResponseDialog = React.useCallback(
