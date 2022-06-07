@@ -29,10 +29,10 @@ export default class HttpRequestManager {
 
     return result;
   };
-  delete = async (id: number) => {
-    let result = {};
+  delete = async <T>(id: number) => {
+    let result: T = {} as T;
     await this.requestConfig
-      .delete(this._requestsURL + `/:${id}`)
+      .delete(this._requestsURL + `/${id}`)
       .then(response => result = response.data)
       .catch(this.errorCatcher);
     return result;

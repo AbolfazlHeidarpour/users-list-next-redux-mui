@@ -3,7 +3,7 @@ import {Dispatch} from "redux";
 import CreateUserActions from "../../../viewModels/User/types/CreateUserActions";
 import React from "react";
 import CreateUserActionsTypes from "../../../viewModels/User/enum/CreateUserActionsTypes";
-import UserManagerState from "../../../models/UserManagerState";
+import UserManagerState from "../../../models/Users/UserManagerState";
 import UseCreateUserReturnType from "../types/UseCreateUserReturnType";
 import UserRequestManager from "../../../viewModels/User/class/UserRequestManager";
 import useBoolean from "../../Shared/hooks/useBoolean";

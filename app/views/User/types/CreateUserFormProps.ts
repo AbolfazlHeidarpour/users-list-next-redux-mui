@@ -1,4 +1,4 @@
-import NewUser from "../../../models/NewUser";
+import NewUser from "../../../models/Users/NewUser";
 import React from "react";
 
 export type CreateUserFormProps = {

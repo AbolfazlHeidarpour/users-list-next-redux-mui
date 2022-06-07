@@ -3,7 +3,7 @@ import CreateUserActions from "../types/CreateUserActions";
 import CreateUserActionsTypes from "../enum/CreateUserActionsTypes";
 import createUserActionsTypes from "../enum/CreateUserActionsTypes";
 import initialCreatedUser from "../constants/initialCreatedUser";
-import CreateUserState from '../../../models/CreateUserState';
+import CreateUserState from '../../../models/Users/CreateUserState';
 
 const createUserReducer: Reducer<CreateUserState, CreateUserActions> = (
   state: CreateUserState = initialCreatedUser,

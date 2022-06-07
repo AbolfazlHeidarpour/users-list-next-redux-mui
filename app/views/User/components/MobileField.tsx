@@ -13,6 +13,16 @@ const MobileField: React.FC<MobileFieldProps> = (
     onChange={onChange}
     label='شماره موبایل'
     variant='filled'
+    InputLabelProps={{
+      sx: {
+        fontFamily: 'nazanin'
+      }
+    }}
+    InputProps={{
+      sx: {
+        fontFamily: 'nazanin'
+      }
+    }}
   />
 ;
 
