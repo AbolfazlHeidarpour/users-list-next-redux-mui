@@ -2,9 +2,11 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## شروع کار
 
-ابتدا از پروژه با لینک https://github.com/safarishahim/front-code-challenge-1 یک کلون با گیت بگیرید. این پروژه قسمت بکند است که با نود جی‌اس پیاده‌سازی شده است. این پروژه را اجرا کنید. با اینکار روی پورت ۳۰۰۹ باید قابل دسترسی باشد.
+با کمک دستور `git clone` از مخزن پروژه کلون بگیرید.
 
-سپس از این مخزن فرانت‌اند کلون گرفته و با اجرای دستور `npm install` پکیج‌های لازم را نصب کنید. سپس برای اجرای آن در حالت توسعه یا development، دستور `npm run de` را اجرا کنید.
+سپس به مسیر Server بروید این پوشه برنامه سمت سرور پروژه است که با نودجی‌اس توسعه یافته است. با اجرای دستور `npm install` پکیج‌های این قسمت را نصب کنید و با اجرای دستور `npm start` سرور روی پورت ۳۰۰۹ اجرا می‌شود.
+
+سپس به مسیر ClientApp بروید. با دستور `npm install‍‍‍‍` پکیج‌های لازم را نصب کنید و با اجرای دستور `npm run dev` برنامه تحت وب را اجرا کنید.
 
 از پروژه لذت ببرید!
 
@@ -19,3 +21,5 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 ۴. فریم‌ورک Material UI
 
 ۵. کتابخانه Redux Toolkit
+
+نکته:‌ برنامه سمت سرور برگرفته از این مخزن https://github.com/safarishahim/front-code-challenge-1 است.
