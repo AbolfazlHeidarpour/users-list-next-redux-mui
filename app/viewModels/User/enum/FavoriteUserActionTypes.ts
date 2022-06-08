@@ -1,4 +1,0 @@
-export enum FavoriteUserActionTypes {
-  'ADD_FAVORITE_USER' = 'ADD_FAVORITE_USER',
-  'REMOVE_FAVORITE_USER' = 'REMOVE_FAVORITE_USER'
-}
